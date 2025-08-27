@@ -42,20 +42,21 @@
   "releases": [
     {
       "title": "Noche Eterna",
-      "cover": "/covers/noche-eterna.jpg",
+      "album": "Noche Eterna Album",
+      "releaseDate": "2025-08-15",
+      "cover": "https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=300",
       "links": {
         "spotify": "https://open.spotify.com/track/...",
         "applemusic": "https://music.apple.com/...",
-        "youtube": "https://youtube.com/watch?v=..."
+        "youtube": "https://www.youtube.com/watch?v=VxGW_AQwWfo"
       }
     },
     {
       "title": "Amanecer",
-      "cover": "/covers/amanecer.jpg",
-      "links": {
-        "spotify": "https://open.spotify.com/track/...",
-        "deezer": "https://deezer.com/track/..."
-      }
+      "album": "Noche Eterna Album",
+      "releaseDate": "2025-05-02",
+      "cover": "https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=300",
+      "links": { "spotify": "https://open.spotify.com/track/..." }
     }
   ]
 }

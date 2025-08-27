@@ -1,0 +1,28 @@
+---
+import ReleaseItem from "./ReleaseItem.astro";
+import Section from "../layouts/Section.astro";
+
+interface Release {
+  title: string;
+  releaseDate?: string;
+  cover?: string;
+  links?: Record<string, string>;
+}
+const { releases = [] as Release[] } = Astro.props;
+
+// Ordenar DESC por releaseDate (vacías al final)
+const sorted = [...releases].sort((a, b) => {
+  const ta = a.releaseDate ? new Date(a.releaseDate).getTime() : -Infinity;
+  const tb = b.releaseDate ? new Date(b.releaseDate).getTime() : -Infinity;
+  return tb - ta;
+});
+
+const [latest, ...rest] = sorted;
+---
+
+<Section title="Ultimos lanzamientos">
+  <div class="space-y-3">
+    {latest && <ReleaseItem {...latest} latest />}
+    {rest.length > 0 && rest.map((r) => <ReleaseItem {...r} />)}
+  </div>
+</Section>

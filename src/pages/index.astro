@@ -3,6 +3,7 @@ import site from "../data/site.json";
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import UpcomingShows from "../components/UpcomingShows.astro";
+import ReleasesList from "../components/ReleasesList.astro";
 import type { Theme } from "../types/theme";
 import { isTheme } from "../types/theme";
 const theme: Theme = isTheme(site?.config?.theme) ? site.config.theme : "dark";
@@ -10,8 +11,9 @@ const artist = site.artist
 ---
 
 <Layout theme={theme} title={site.config.title} description={site.config.description}>
-  <div class="relative z-10 max-w-xl mx-auto px-4 py-8 space-y-6">
+  <div class="relative z-10 max-w-xl mx-auto px-2 py-8 space-y-6">
     <Header name={artist.name} description={artist.description} bio={artist.bio} />
     <UpcomingShows shows={site.shows} />
+    <ReleasesList releases={site.releases} />
   </div>
 </Layout>
