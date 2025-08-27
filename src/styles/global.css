@@ -1,1 +1,164 @@
 @import "tailwindcss";
+
+/* 1) Mapeo de tokens Tailwind (no cambia más) */
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  /* Gradiente principal del layout */
+  --color-gradient-from: hsl(var(--gradient-from));
+  --color-gradient-via: hsl(var(--gradient-via));
+  --color-gradient-to: hsl(var(--gradient-to));
+
+  /* Halos “blob” */
+  --color-blob1: hsl(var(--blob1));
+  --color-blob2: hsl(var(--blob2));
+  --color-blob3: hsl(var(--blob3));
+}
+
+/* 2) Base (usa los tokens ya mapeados) */
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+/* 3) Themes (valores de las vars que consumen los tokens) */
+/* ——— LIGHT ——— */
+:root[data-theme="light"] {
+  --background: 0 0% 100%;
+  --foreground: 224 71% 4%;
+  --primary: 221 83% 53%;
+  --primary-foreground: 210 40% 98%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+
+  --gradient-from: 210 20% 98%;
+  --gradient-via: 225 30% 92%;
+  --gradient-to: 210 20% 98%;
+
+  --blob1: 250 90% 66%;
+  --blob2: 190 90% 66%;
+  --blob3: 330 85% 72%;
+}
+
+/* ——— DARK ——— */
+:root[data-theme="dark"] {
+  --background: 224 71% 4%;
+  --foreground: 210 40% 98%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 222 47% 11%;
+  --muted: 223 47% 11%;
+  --muted-foreground: 215 20% 65%;
+
+  --gradient-from: 230 25% 10%;
+  --gradient-via: 265 55% 22%;
+  --gradient-to: 230 25% 10%;
+
+  --blob1: 265 85% 60%;
+  --blob2: 190 85% 60%;
+  --blob3: 315 85% 65%;
+}
+
+/* ——— VIOLET ——— */
+:root[data-theme="violet"] {
+  --background: 230 25% 10%;
+  --foreground: 210 20% 96%;
+  --primary: 262 83% 58%;
+  --primary-foreground: 260 100% 98%;
+  --muted: 230 15% 18%;
+  --muted-foreground: 230 10% 70%;
+  --gradient-from: 230 25% 10%;
+  --gradient-via: 268 62% 24%;
+  --gradient-to: 230 25% 10%;
+  --blob1: 275 85% 60%;
+  --blob2: 190 85% 60%;
+  --blob3: 320 85% 65%;
+}
+
+/* ——— BLUE ——— */
+:root[data-theme="blue"] {
+  --background: 222 30% 10%;
+  --foreground: 210 20% 96%;
+  --primary: 221 83% 53%;
+  --primary-foreground: 210 40% 98%;
+  --muted: 222 15% 18%;
+  --muted-foreground: 220 10% 70%;
+  --gradient-from: 222 30% 10%;
+  --gradient-via: 224 65% 24%;
+  --gradient-to: 222 30% 10%;
+  --blob1: 210 90% 60%;
+  --blob2: 190 90% 60%;
+  --blob3: 255 85% 65%;
+}
+
+/* ——— GREEN ——— */
+:root[data-theme="green"] {
+  --background: 210 25% 10%;
+  --foreground: 210 20% 96%;
+  --primary: 142 71% 40%;
+  --primary-foreground: 140 100% 96%;
+  --muted: 210 15% 18%;
+  --muted-foreground: 210 10% 70%;
+  --gradient-from: 210 25% 10%;
+  --gradient-via: 150 45% 22%;
+  --gradient-to: 210 25% 10%;
+  --blob1: 150 80% 50%;
+  --blob2: 170 85% 55%;
+  --blob3: 120 75% 55%;
+}
+
+/* ——— RED ——— */
+:root[data-theme="red"] {
+  --background: 225 25% 10%;
+  --foreground: 210 20% 96%;
+  --primary: 0 84% 60%;
+  --primary-foreground: 0 100% 98%;
+  --muted: 225 15% 18%;
+  --muted-foreground: 225 10% 70%;
+  --gradient-from: 225 25% 10%;
+  --gradient-via: 350 60% 24%;
+  --gradient-to: 225 25% 10%;
+  --blob1: 0 90% 60%;
+  --blob2: 20 90% 60%;
+  --blob3: 340 80% 60%;
+}
+
+/* ——— PINK ——— */
+:root[data-theme="pink"] {
+  --background: 230 25% 10%;
+  --foreground: 210 20% 96%;
+  --primary: 330 81% 60%;
+  --primary-foreground: 330 100% 98%;
+  --muted: 230 15% 18%;
+  --muted-foreground: 230 10% 70%;
+  --gradient-from: 230 25% 10%;
+  --gradient-via: 320 60% 24%;
+  --gradient-to: 230 25% 10%;
+  --blob1: 330 85% 65%;
+  --blob2: 280 85% 65%;
+  --blob3: 0 85% 65%;
+}
+
+/* ——— ORANGE ——— */
+:root[data-theme="orange"] {
+  --background: 225 25% 10%;
+  --foreground: 210 20% 96%;
+  --primary: 24 94% 50%;
+  --primary-foreground: 24 100% 98%;
+  --muted: 225 15% 18%;
+  --muted-foreground: 225 10% 70%;
+  --gradient-from: 225 25% 10%;
+  --gradient-via: 20 70% 26%;
+  --gradient-to: 225 25% 10%;
+  --blob1: 24 95% 55%;
+  --blob2: 10 90% 60%;
+  --blob3: 40 90% 60%;
+}

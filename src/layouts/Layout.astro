@@ -1,22 +1,37 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import "../styles/global.css";
+---
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+<!doctype html>
+<html lang="es-AR" data-theme="violet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>ArtisTree</title>
+  </head>
+  <body>
+    <div
+      class="min-h-screen bg-gradient-to-br from-gradient-from via-gradient-via to-gradient-to relative overflow-hidden"
+    >
+      {/* Background Effects */}
+      <div class="absolute inset-0">
+        <div
+          class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse bg-blob1/10"
+        >
+        </div>
+        <div
+          class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl animate-pulse delay-1000 bg-blob2/10"
+        >
+        </div>
+        <div
+          class="absolute top-1/2 left-1/2 w-64 h-64 rounded-full blur-3xl animate-pulse delay-2000 bg-blob3/10"
+        >
+        </div>
+      </div>
+      {/* Content */}
+      <slot />
+    </div>
+  </body>
+</html>
