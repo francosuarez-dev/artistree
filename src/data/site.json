@@ -2,22 +2,24 @@
   "config": {
     "title": "Artistree Landing",
     "description": "Landind en Astro",
-    "theme": "violet"
+    "theme": "violet",
+    "copyright": "© 2025 Franco Suárez"
   },
   "artist": {
     "name": "Franco Suárez",
     "description": "Cantante y compositor de música indie.",
-    "bio": "Creando musica desde siempre"
+    "bio": "Creando musica desde siempre",
+    "picture" : "./profile.jpeg"
   },
   "socials": {
     "instagram": "https://instagram.com/franco",
     "facebook": "https://facebook.com/franco",
     "x": "https://x.com/franco",
-    "spotify": "https://open.spotify.com/artist/...",
-    "applemusic": "https://music.apple.com/artist/...",
-    "tidal": "https://tidal.com/artist/...",
-    "youtube": "https://youtube.com/franco",
-    "whatsapp": "https://wa.me/5491112345678"
+    "youtube": "https://youtube.com/franco"
+  },
+  "booking": {
+    "email": "booking@franco.com",
+    "phone": "+54 911 2345 6789"
   },
   "shows": [
     {
@@ -44,7 +46,7 @@
       "title": "Noche Eterna",
       "album": "Noche Eterna Album",
       "releaseDate": "2025-08-15",
-      "cover": "https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=300",
+      "cover": "./img/covers/cover1.jpeg",
       "links": {
         "spotify": "https://open.spotify.com/track/...",
         "applemusic": "https://music.apple.com/...",
@@ -55,7 +57,7 @@
       "title": "Amanecer",
       "album": "Noche Eterna Album",
       "releaseDate": "2025-05-02",
-      "cover": "https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg?auto=compress&cs=tinysrgb&w=300",
+      "cover": "./img/covers/cover1.jpeg",
       "links": { "spotify": "https://open.spotify.com/track/..." }
     }
   ]

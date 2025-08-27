@@ -4,6 +4,8 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import UpcomingShows from "../components/UpcomingShows.astro";
 import ReleasesList from "../components/ReleasesList.astro";
+import Booking from "../components/Booking.astro";
+import Footer from "../components/Footer.astro";
 import type { Theme } from "../types/theme";
 import { isTheme } from "../types/theme";
 const theme: Theme = isTheme(site?.config?.theme) ? site.config.theme : "dark";
@@ -12,8 +14,10 @@ const artist = site.artist
 
 <Layout theme={theme} title={site.config.title} description={site.config.description}>
   <div class="relative z-10 max-w-xl mx-auto px-2 py-8 space-y-6">
-    <Header name={artist.name} description={artist.description} bio={artist.bio} />
+    <Header {...artist} links={site.socials} />
     <UpcomingShows shows={site.shows} />
     <ReleasesList releases={site.releases} />
+    <Booking {...site.booking} />
+    <Footer copyright={site.config.copyright} />
   </div>
 </Layout>

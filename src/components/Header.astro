@@ -1,32 +1,40 @@
 ---
 import Section from "../layouts/Section.astro";
 import { MusicIcon } from "../icons";
+import SocialIcons from "./SocialIcons.astro";
 
 interface Props {
   name: string;
   description: string;
   bio: string;
+  links?: Record<string, string>;
+  picture: string
 }
 
-const { name, bio, description }: Props = Astro.props;
+const { name, bio, description, links = {}, picture }: Props = Astro.props;
 ---
 
 <Section>
-  <div class="relative mb-6">
-    <img
-      src="./profile.jpeg"
-      alt="Luna Vega"
-      class="w-32 h-32 rounded-full mx-auto border-2 border-white/20 shadow-2xl object-cover backdrop-blur-xl bg-white/5"
-    />
-    <div
-      class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-xl rounded-full p-2 border border-white/20"
-    >
-      <MusicIcon class="text-foreground size-5" />
+  <header class="py-2">
+    <div class="relative mb-6">
+      <img
+        src={picture}
+        alt="Luna Vega"
+        class="w-32 h-32 rounded-full mx-auto border-2 border-white/20 shadow-2xl object-cover backdrop-blur-xl bg-white/5"
+      />
+      <div
+        class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-xl rounded-full p-2 border border-white/20"
+      >
+        <MusicIcon class="text-white size-5" />
+      </div>
     </div>
-  </div>
-  <h1 class="text-3xl font-bold text-foreground mb-2">{name}</h1>
-  <p class="text-foreground/80 text-lg">{description}</p>
-  <p class="text-foreground/60 text-sm mt-2">
-    {bio}
-  </p>
+    <h1 class="text-3xl font-bold text-foreground mb-2">{name}</h1>
+    <p class="text-foreground/80 text-lg">{description}</p>
+    <p class="text-foreground/60 text-sm mt-2">
+      {bio}
+    </p>
+    <div class="flex w-full items-start justify-center py-4 mt-4">
+      <SocialIcons links={links} size={32} />
+    </div>
+  </header>
 </Section>

@@ -1,0 +1,41 @@
+---
+import Section from "../layouts/Section.astro";
+import EmailIcon from "../icons/EmailIcon.astro";
+import PhoneIcon from "../icons/PhoneIcon.astro";
+
+interface Booking {
+  email?: string;
+  phone?: string;
+}
+
+const { email, phone }: Booking = Astro.props;
+---
+
+<Section title="Booking & Colaboraciones">
+  {
+    (email || phone) && (
+      <section class="space-y-3">
+        <div class="flex flex-col gap-3">
+          {email && (
+            <a
+              href={`mailto:${email}`}
+              class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-xl text-white px-6 py-3 rounded-2xl font-medium transition-all duration-200 border border-white/20 hover:scale-105"
+            >
+              <EmailIcon size={18} class="shrink-0" />
+              <span>{email}</span>
+            </a>
+          )}
+          {phone && (
+            <a
+              href={`tel:${phone.replace(/\s+/g, "")}`}
+              class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-xl text-white px-6 py-3 rounded-2xl font-medium transition-all duration-200 border border-white/20 hover:scale-105"
+            >
+              <PhoneIcon size={18} class="shrink-0" />
+              <span>{phone}</span>
+            </a>
+          )}
+        </div>
+      </section>
+    )
+  }
+</Section>

@@ -1,0 +1,13 @@
+---
+interface Props {
+  copyright: string;
+}
+
+const { copyright }: Props = Astro.props;
+---
+
+<div>
+  <footer>
+    <p class="text-center text-foreground/50 text-sm">{copyright}</p>
+  </footer>
+</div>
