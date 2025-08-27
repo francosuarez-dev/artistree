@@ -1,5 +1,6 @@
 ---
-import { MusicIcon} from "../icons"
+import Section from "../layouts/Section.astro";
+import { MusicIcon } from "../icons";
 
 interface Props {
   name: string;
@@ -10,9 +11,7 @@ interface Props {
 const { name, bio, description }: Props = Astro.props;
 ---
 
-<div
-  class="text-center mb-8 relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl"
->
+<Section>
   <div class="relative mb-6">
     <img
       src="./profile.jpeg"
@@ -30,4 +29,4 @@ const { name, bio, description }: Props = Astro.props;
   <p class="text-foreground/60 text-sm mt-2">
     {bio}
   </p>
-</div>
+</Section>

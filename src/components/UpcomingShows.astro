@@ -1,0 +1,39 @@
+---
+import Section from "../layouts/Section.astro";
+import ShowCard from "./ShowCard.astro";
+
+interface Show {
+  date: string;
+  city: string;
+  country?: string;
+  venue: string;
+  tickets?: string;
+  title: string;
+  available: boolean;
+}
+const { shows = [] as Show[] } = Astro.props;
+
+// Solo futuros y ordenados asc por fecha
+const now = new Date();
+const upcoming = shows
+  .filter((s: any) => new Date(s.date).getTime() >= now.getTime())
+  .sort(
+    (a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime()
+  );
+---
+
+<Section title="Próximos Shows">
+  {
+    upcoming.length > 0 ? (
+      <section class="space-y-3">
+        <ul class="space-y-3">
+          {upcoming.map((s: Show) => (
+            <ShowCard {...s} />
+          ))}
+        </ul>
+      </section>
+    ) : (
+      <p class="text-muted-foreground">No hay shows programados.</p>
+    )
+  }
+</Section>

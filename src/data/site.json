@@ -21,17 +21,22 @@
   },
   "shows": [
     {
+      "title": "Bailaso",
       "date": "2025-09-12",
       "city": "Córdoba",
       "country": "AR",
       "venue": "Club Paraguay",
-      "tickets": "https://mipass.com/entradas/xyz"
+      "tickets": "https://mipass.com/entradas/xyz",
+      "available": true
     },
     {
+      "title": "Bailaso",
       "date": "2025-10-05",
       "city": "Madrid",
       "country": "ES",
-      "venue": "Sala Caracol"
+      "venue": "Sala Caracol",
+      "tickets": "https://mipass.com/entradas/xyz",
+      "available": false
     }
   ],
   "releases": [

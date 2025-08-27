@@ -2,7 +2,7 @@ export { default as MusicIcon } from "./MusicIcon.astro";
 export { default as EmailIcon } from "./EmailIcon.astro";
 export { default as GlobeIcon } from "./GlobeIcon.astro";
 export { default as PhoneIcon } from "./PhoneIcon.astro";
-export { default as TickestIcon } from "./TicketsIcon.astro";
+export { default as TicketsIcon } from "./TicketsIcon.astro";
 export { default as InstagramIcon } from "./InstagramIcon.astro";
 export { default as SpotifyIcon } from "./SpotifyIcon.astro";
 export { default as TidalIcon } from "./TidalIcon.astro";
