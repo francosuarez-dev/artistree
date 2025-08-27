@@ -1,0 +1,33 @@
+---
+import { MusicIcon} from "../icons"
+
+interface Props {
+  name: string;
+  description: string;
+  bio: string;
+}
+
+const { name, bio, description }: Props = Astro.props;
+---
+
+<div
+  class="text-center mb-8 relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl"
+>
+  <div class="relative mb-6">
+    <img
+      src="./profile.jpeg"
+      alt="Luna Vega"
+      class="w-32 h-32 rounded-full mx-auto border-2 border-white/20 shadow-2xl object-cover backdrop-blur-xl bg-white/5"
+    />
+    <div
+      class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-xl rounded-full p-2 border border-white/20"
+    >
+      <MusicIcon class="text-foreground size-5" />
+    </div>
+  </div>
+  <h1 class="text-3xl font-bold text-foreground mb-2">{name}</h1>
+  <p class="text-foreground/80 text-lg">{description}</p>
+  <p class="text-foreground/60 text-sm mt-2">
+    {bio}
+  </p>
+</div>

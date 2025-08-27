@@ -1,15 +1,25 @@
 ---
 import "../styles/global.css";
+import type { Theme } from "../types/theme";
+
+interface Props {
+  title: string;
+  description: string;
+  theme?: Theme;
+}
+
+const { theme, title, description }: Props = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es-AR" data-theme="violet">
+<html lang="es-AR" data-theme={theme}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>ArtisTree</title>
+    <title>{title}</title>
+    <meta name="description" content={description} />
   </head>
   <body>
     <div

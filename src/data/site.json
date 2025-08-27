@@ -1,0 +1,56 @@
+{
+  "config": {
+    "title": "Artistree Landing",
+    "description": "Landind en Astro",
+    "theme": "violet"
+  },
+  "artist": {
+    "name": "Franco Suárez",
+    "description": "Cantante y compositor de música indie.",
+    "bio": "Creando musica desde siempre"
+  },
+  "socials": {
+    "instagram": "https://instagram.com/franco",
+    "facebook": "https://facebook.com/franco",
+    "x": "https://x.com/franco",
+    "spotify": "https://open.spotify.com/artist/...",
+    "applemusic": "https://music.apple.com/artist/...",
+    "tidal": "https://tidal.com/artist/...",
+    "youtube": "https://youtube.com/franco",
+    "whatsapp": "https://wa.me/5491112345678"
+  },
+  "shows": [
+    {
+      "date": "2025-09-12",
+      "city": "Córdoba",
+      "country": "AR",
+      "venue": "Club Paraguay",
+      "tickets": "https://mipass.com/entradas/xyz"
+    },
+    {
+      "date": "2025-10-05",
+      "city": "Madrid",
+      "country": "ES",
+      "venue": "Sala Caracol"
+    }
+  ],
+  "releases": [
+    {
+      "title": "Noche Eterna",
+      "cover": "/covers/noche-eterna.jpg",
+      "links": {
+        "spotify": "https://open.spotify.com/track/...",
+        "applemusic": "https://music.apple.com/...",
+        "youtube": "https://youtube.com/watch?v=..."
+      }
+    },
+    {
+      "title": "Amanecer",
+      "cover": "/covers/amanecer.jpg",
+      "links": {
+        "spotify": "https://open.spotify.com/track/...",
+        "deezer": "https://deezer.com/track/..."
+      }
+    }
+  ]
+}
