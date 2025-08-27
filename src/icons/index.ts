@@ -1,0 +1,13 @@
+export { default as MusicIcon } from "./MusicIcon.astro";
+export { default as EmailIcon } from "./EmailIcon.astro";
+export { default as GlobeIcon } from "./GlobeIcon.astro";
+export { default as PhoneIcon } from "./PhoneIcon.astro";
+export { default as TickestIcon } from "./TicketsIcon.astro";
+export { default as InstagramIcon } from "./InstagramIcon.astro";
+export { default as SpotifyIcon } from "./SpotifyIcon.astro";
+export { default as TidalIcon } from "./TidalIcon.astro";
+export { default as WhatsappIcon } from "./WhatsappIcon.astro";
+export { default as XIcon } from "./XIcon.astro";
+export { default as YoutubeIcon } from "./YoutubeIcon.astro";
+export { default as FacebookIcon } from "./FacebookIcon.astro";
+export { default as AppleMusicIcon } from "./AppleMusicIcon.astro";
