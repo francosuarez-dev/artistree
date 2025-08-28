@@ -10,15 +10,18 @@ import {
   YoutubeIcon,
   EmailIcon,
   GlobeIcon,
-  TiktokIcon
+  TiktokIcon,
 } from "../icons";
+
+import { cn } from "../utils/classNames";
 
 interface Props {
   links: Record<string, string>;
   size?: number;
+  section?: "header" | "footer" | "release" | "social" | "link";
 }
 
-const { links, size = 22 }: Props = Astro.props;
+const { links, size = 22, section = "social" }: Props = Astro.props;
 
 const ICON_MAP: Record<string, any> = {
   instagram: InstagramIcon,
@@ -31,29 +34,36 @@ const ICON_MAP: Record<string, any> = {
   youtube: YoutubeIcon,
   email: EmailIcon,
   website: GlobeIcon,
-  tiktok: TiktokIcon
+  tiktok: TiktokIcon,
 };
 ---
 
-<ul class="flex flex-wrap items-center gap-3">
+<div
+  class={cn(
+    "flex flex-wrap gap-4 w-full justify-center",
+    section === "release" && "justify-start gap-2"
+  )}
+>
   {
     Object.entries(links).map(([key, url]) => {
       const Icon = ICON_MAP[key.toLowerCase()];
-      if (!Icon || !url) return null;
+      if (!Icon) return null;
       return (
-        <li>
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={key}
-            class="inline-flex items-center justify-center
-                 text-foreground/80 hover:text-primary transition"
-          >
-            <Icon size={size} />
-          </a>
-        </li>
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class={cn(
+            "text-foreground/70 hover:text-foreground duration-300 transition-all",
+            section === "header" && "hover:-translate-y-1",
+            section === "release" &&
+              "w-10 h-10 bg-foreground/10 backdrop-blur-xl rounded-lg border-foreground/20 hover:border-foreground/40 transition-all duration-200 hover:scale-110 flex items-center justify-center hover:bg-foreground/20"
+          )}
+          aria-label={key}
+        >
+          <Icon size={size} />
+        </a>
       );
     })
   }
-</ul>
+</div>
