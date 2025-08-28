@@ -34,7 +34,7 @@ const { name, bio, description, links = {}, picture }: Props = Astro.props;
       {bio}
     </p>
     <div class="flex w-full items-start justify-center py-4 mt-4">
-      <SocialIcons links={links} size={32} />
+      <SocialIcons links={links} size={32} section="header" />
     </div>
   </header>
 </Section>
