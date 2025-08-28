@@ -13,13 +13,7 @@ interface Show {
 }
 const { shows = [] as Show[] } = Astro.props;
 
-// Solo futuros y ordenados asc por fecha
-const now = new Date();
 const upcoming = shows
-  .filter((s: any) => new Date(s.date).getTime() >= now.getTime())
-  .sort(
-    (a: any, b: any) => new Date(a.date).getTime() - new Date(b.date).getTime()
-  );
 ---
 
 <Section title="Próximos Shows">
