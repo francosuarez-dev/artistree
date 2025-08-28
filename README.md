@@ -219,6 +219,46 @@ Cada release:
 
 ---
 
+## 🔗 Links personalizados
+
+Además de las redes sociales básicas (`socials`), podés definir una lista de **links personalizados** en `site.json`:
+
+````json
+"links": [
+  {
+    "label": "Instagram Persona",
+    "description": "Perfil personal de Instagram",
+    "url": "https://instagram.com/usuario",
+    "icon": "website"
+  },
+  {
+    "label": "Instagram Productora",
+    "description": "Perfil de Instagram de la productora",
+    "url": "https://instagram.com/productora",
+    "icon": "instagram",
+    "cover": "./img/profile.jpeg"
+  },
+  {
+    "label": "YouTube",
+    "description": "Canal de YouTube del artista",
+    "url": "https://www.youtube.com/channel/...",
+    "icon": "youtube"
+  }
+]
+
+````
+### Campos disponibles:
+
+- label: Nombre del link que se mostrará.
+- description: Texto corto descriptivo.
+- url: Dirección completa del enlace.
+- icon: Nombre del ícono (ej: instagram, youtube, website, tiktok, etc.).
+- cover (opcional): Imagen personalizada.
+- 👉 Si cover está presente, reemplaza el ícono.
+
+
+---
+
 ## 🖼️ Imágenes (covers / profile)
 
 Tenés dos caminos:
@@ -226,7 +266,7 @@ Tenés dos caminos:
 ### Opción A – JSON + `public/` (simple)
 
 - Colocá las imágenes en `public/covers/...`
-- En el JSON usá rutas absolutas:  
+- En el JSON usá rutas absolutas:
   `"cover": "/covers/noche-eterna.jpg"`, `"picture": "/covers/profile.jpeg"`
 
 ### Opción B – Imports optimizados (avanzado)
@@ -243,7 +283,7 @@ export default {
   artist: { picture: profile },
   releases: [{ title: "Track", cover: cover1 /* ... */ }],
 };
-```
+````
 
 ---
 

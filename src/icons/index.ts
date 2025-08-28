@@ -13,3 +13,4 @@ export { default as FacebookIcon } from "./FacebookIcon.astro";
 export { default as AppleMusicIcon } from "./AppleMusicIcon.astro";
 export { default as PlayIcon } from "./PlayIcon.astro";
 export { default as TiktokIcon } from "./TiktokIcon.astro";
+export { default as ExternalLinkIcon } from "./ExternalLinkIcon.astro";

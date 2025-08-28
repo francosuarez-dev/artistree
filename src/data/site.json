@@ -66,5 +66,26 @@
         "youtube": "https://www.youtube.com/watch?v=VxGW_AQwWfo"
       }
     }
+  ],
+  "links": [
+    {
+      "label": "Instagram Persona",
+      "description": "Perfil personal de Instagram",
+      "url": "https://open.spotify.com/artist/...",
+      "icon": "website"
+    },
+    {
+      "label": "Instagram Productora",
+      "description": "Perfil de Instagram de la productora",
+      "url": "https://music.apple.com/artist/...",
+      "icon": "instagram",
+      "cover": "./img/profile.jpeg"
+    },
+    {
+      "label": "YouTube",
+      "description": "Canal de YouTube del artista",
+      "url": "https://www.youtube.com/channel/...",
+      "icon": "youtube"
+    }
   ]
 }

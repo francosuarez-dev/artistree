@@ -4,11 +4,12 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import UpcomingShows from "../components/UpcomingShows.astro";
 import ReleasesList from "../components/ReleasesList.astro";
+import ExternalLinks from "../components/ExternalLinks.astro";
 import Booking from "../components/Booking.astro";
 import Footer from "../components/Footer.astro";
 import type { Theme, FontPreset } from "../types/theme";
 import { isTheme } from "../types/theme";
-import { isValidShow, isValidRelease, hasBooking } from "../utils/guards";
+import { isValidShow, isValidRelease, hasBooking, isValidLink } from "../utils/guards";
 
 // theme & font seguros
 const font: FontPreset = (site?.config?.font as FontPreset) ?? "modern";
@@ -28,9 +29,15 @@ const releases = Array.isArray(site?.releases)
       .sort((a, b) => b.releaseDate.localeCompare(a.releaseDate))
   : [];
 
+const allLinks = Array.isArray(site?.links)
+  ? site.links.filter(isValidLink)
+  : [];
+
 const showUpcoming = upcomingShows.length > 0;
 const showReleases = releases.length > 0;
 const showBooking = hasBooking(site?.booking);
+const showLinks = allLinks.length > 0;
+
 ---
 
 <Layout
@@ -45,6 +52,8 @@ const showBooking = hasBooking(site?.booking);
     {showUpcoming && <UpcomingShows shows={upcomingShows} />}
 
     {showReleases && <ReleasesList releases={releases} />}
+
+    {showLinks && <ExternalLinks links={site?.links ?? []} />}
 
     {showBooking && <Booking {...site.booking} />}
 
