@@ -1,5 +1,21 @@
 {
   "name": "artistree",
+  "description": "Link in Bio Page para Artistas",
+  "author": {
+    "name": "Franco Suárez",
+    "email": "francosuarez.dev@gmail.com",
+    "url": "https://github.com/francosuarez-dev"
+  },
+  "keywords": [
+    "astro",
+    "tailwind",
+    "music",
+    "artist",
+    "link-in-bio",
+    "landing",
+    "linktree",
+    "short"
+  ],
   "type": "module",
   "version": "0.0.1",
   "scripts": {
