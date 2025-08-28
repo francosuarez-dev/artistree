@@ -7,13 +7,17 @@ Funciona como un “link-in-bio” moderno para redes sociales: concentra links 
 
 Está construida con **[Astro](https://astro.build/)** + **TailwindCSS v4**, y pensada para ser fácilmente configurable por medio de un solo archivo: `src/data/site.json`.
 
+## 🚀 Demo
+👉 [Ver demo](https://artistree-astro.netlify.app/)
+
+
 ---
 
 ## 🚀 Quick Start
 
 1. **Clonar el repositorio**
    ```bash
-   git clone https://github.com/tuusuario/artis-tree.git
+   git clone https://github.com/francosuarez-dev/artistree.git
    cd artis-tree
    ```
 
