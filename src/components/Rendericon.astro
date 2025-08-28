@@ -1,0 +1,15 @@
+---
+import { ICON_MAP } from "../constants/icons";
+
+interface Props {
+  name: string; // nombre de la red: instagram, facebook, etc.
+  size?: number; // tamaño opcional
+  class?: string; // estilos opcionales extra
+}
+
+const { name, size = 22, class: className = "" }: Props = Astro.props;
+
+const Icon = ICON_MAP[name.toLowerCase()];
+---
+
+{Icon && <Icon size={size} class={className} />}
