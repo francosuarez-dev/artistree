@@ -19,7 +19,7 @@ const { email, phone }: Booking = Astro.props;
           {email && (
             <a
               href={`mailto:${email}`}
-              class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-xl text-white px-6 py-3 rounded-2xl font-medium transition-all duration-200 border border-white/20 hover:scale-105"
+              class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-xl text-foregroud px-6 py-3 rounded-2xl font-medium transition-all duration-200 border border-white/20 hover:scale-105"
             >
               <EmailIcon size={18} class="shrink-0" />
               <span>{email}</span>
@@ -28,7 +28,7 @@ const { email, phone }: Booking = Astro.props;
           {phone && (
             <a
               href={`tel:${phone.replace(/\s+/g, "")}`}
-              class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-xl text-white px-6 py-3 rounded-2xl font-medium transition-all duration-200 border border-white/20 hover:scale-105"
+              class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-xl text-foreground px-6 py-3 rounded-2xl font-medium transition-all duration-200 border border-white/20 hover:scale-105"
             >
               <PhoneIcon size={18} class="shrink-0" />
               <span>{phone}</span>

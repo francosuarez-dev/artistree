@@ -6,13 +6,20 @@ import UpcomingShows from "../components/UpcomingShows.astro";
 import ReleasesList from "../components/ReleasesList.astro";
 import Booking from "../components/Booking.astro";
 import Footer from "../components/Footer.astro";
-import type { Theme } from "../types/theme";
+import type { Theme, FontPreset } from "../types/theme";
 import { isTheme } from "../types/theme";
+
+const font: FontPreset = (site?.config?.font as FontPreset) ?? "modern";
 const theme: Theme = isTheme(site?.config?.theme) ? site.config.theme : "dark";
-const artist = site.artist
+const artist = site.artist;
 ---
 
-<Layout theme={theme} title={site.config.title} description={site.config.description}>
+<Layout
+  theme={theme}
+  title={site.config.title}
+  description={site.config.description}
+  font={font}
+>
   <div class="relative z-10 max-w-xl mx-auto px-2 py-8 space-y-6">
     <Header {...artist} links={site.socials} />
     <UpcomingShows shows={site.shows} />

@@ -1,4 +1,5 @@
 export type Theme = "light" | "dark" | "violet" | "blue" | "green" | "red" | "pink" | "orange";
+export type FontPreset = "modern" | "elegant" | "grotesk";
 export const THEMES = ["light","dark","violet","blue","green","red","pink","orange"] as const;
 
 export function isTheme(x: unknown): x is Theme {

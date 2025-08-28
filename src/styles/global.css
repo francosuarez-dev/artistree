@@ -20,14 +20,60 @@
   --color-blob3: hsl(var(--blob3));
 }
 
-/* 2) Base (usa los tokens ya mapeados) */
+/* Variables base (fallbacks) */
+:root {
+  --font-base: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  --font-heading: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+    sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
 @layer base {
-  :root {
+  html {
     color-scheme: light dark;
   }
   body {
     @apply bg-background text-foreground antialiased;
+    font-family: var(--font-base);
   }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Presets seleccionables con data-font en <html> */
+
+/* 1) modern: Inter en todo */
+:root[data-font="modern"] {
+  --font-base: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* 2) elegant: Inter (texto) + Playfair (títulos) */
+:root[data-font="elegant"] {
+  --font-base: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Playfair Display", Georgia, serif;
+}
+
+/* 3) grotesk: Poppins en todo */
+:root[data-font="grotesk"] {
+  --font-base: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Poppins", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* (Opcional) utilidades Tailwind v4 para usar explícitamente en elementos sueltos */
+@utility font-heading {
+  font-family: var(--font-heading);
+}
+@utility font-base {
+  font-family: var(--font-base);
+}
+@utility font-mono {
+  font-family: var(--font-mono);
 }
 
 /* 3) Themes (valores de las vars que consumen los tokens) */
@@ -49,22 +95,23 @@
   --blob3: 330 85% 72%;
 }
 
-/* ——— DARK ——— */
+/* ——— DARK (neutral/gris azulado) ——— */
 :root[data-theme="dark"] {
-  --background: 224 71% 4%;
-  --foreground: 210 40% 98%;
-  --primary: 217 91% 60%;
-  --primary-foreground: 222 47% 11%;
-  --muted: 223 47% 11%;
-  --muted-foreground: 215 20% 65%;
+  --background: 220 15% 6%; /* gris azulado muy oscuro */
+  --foreground: 210 20% 95%; /* texto casi blanco */
+  --primary: 200 80% 55%; /* azul brillante */
+  --primary-foreground: 210 40% 10%; /* contraste para botones */
 
-  --gradient-from: 230 25% 10%;
-  --gradient-via: 265 55% 22%;
-  --gradient-to: 230 25% 10%;
+  --muted: 220 15% 15%; /* gris oscuro */
+  --muted-foreground: 220 10% 65%; /* gris medio */
 
-  --blob1: 265 85% 60%;
-  --blob2: 190 85% 60%;
-  --blob3: 315 85% 65%;
+  --gradient-from: 220 20% 8%; /* gris azulado profundo */
+  --gradient-via: 200 40% 16%; /* azul oscuro */
+  --gradient-to: 220 20% 8%;
+
+  --blob1: 200 85% 55%; /* azul cyan */
+  --blob2: 160 70% 50%; /* verde-agua */
+  --blob3: 45 85% 55%; /* dorado suave */
 }
 
 /* ——— VIOLET ——— */

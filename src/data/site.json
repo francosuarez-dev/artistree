@@ -3,13 +3,14 @@
     "title": "Artistree Landing",
     "description": "Landind en Astro",
     "theme": "violet",
+    "font": "modern",
     "copyright": "© 2025 Franco Suárez"
   },
   "artist": {
-    "name": "Franco Suárez",
+    "name": "Singer Artist",
     "description": "Cantante y compositor de música indie.",
     "bio": "Creando musica desde siempre",
-    "picture" : "./profile.jpeg"
+    "picture" : "./img/profile.jpeg"
   },
   "socials": {
     "instagram": "https://instagram.com/franco",
@@ -18,7 +19,7 @@
     "youtube": "https://youtube.com/franco"
   },
   "booking": {
-    "email": "booking@franco.com",
+    "email": "booking@artistree.link",
     "phone": "+54 911 2345 6789"
   },
   "shows": [
