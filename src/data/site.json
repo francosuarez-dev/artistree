@@ -10,14 +10,14 @@
     "name": "Singer Artist",
     "description": "Cantante y compositor de música indie.",
     "bio": "Creando musica desde siempre",
-    "picture" : "./img/profile.jpeg"
+    "picture": "./img/profile.jpeg"
   },
   "socials": {
     "instagram": "https://instagram.com/franco",
     "facebook": "https://facebook.com/franco",
     "x": "https://x.com/franco",
     "youtube": "https://youtube.com/franco",
-    "tiktok":    "https://www.tiktok.com/@tuusuario" 
+    "tiktok": "https://www.tiktok.com/@tuusuario"
   },
   "booking": {
     "email": "booking@artistree.link",
@@ -60,7 +60,11 @@
       "album": "Noche Eterna Album",
       "releaseDate": "2025-05-02",
       "cover": "./img/covers/cover1.jpeg",
-      "links": { "spotify": "https://open.spotify.com/track/..." }
+      "links": {
+        "spotify": "https://open.spotify.com/track/...",
+        "applemusic": "https://music.apple.com/...",
+        "youtube": "https://www.youtube.com/watch?v=VxGW_AQwWfo"
+      }
     }
   ]
 }
