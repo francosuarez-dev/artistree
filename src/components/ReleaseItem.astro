@@ -1,16 +1,23 @@
 ---
 import SocialIcons from "./SocialIcons.astro";
-import { PlayIcon} from "../icons"
+import { PlayIcon } from "../icons";
 
 interface Props {
   title: string;
-  album:string;
+  album: string;
   releaseDate?: string;
   cover?: string;
   links?: Record<string, string>;
   latest?: boolean;
 }
-const { title, releaseDate, cover, links = {},album, latest }: Props = Astro.props;
+const {
+  title,
+  releaseDate,
+  cover,
+  links = {},
+  album,
+  latest,
+}: Props = Astro.props;
 
 const d = releaseDate ? new Date(releaseDate) : null;
 const pretty = d
@@ -32,8 +39,10 @@ function getYouTubeId(url?: string | null): string | null {
     }
     if (host.includes("youtube.com") || host.includes("music.youtube.com")) {
       if (u.pathname === "/watch") return u.searchParams.get("v");
-      if (u.pathname.startsWith("/shorts/")) return u.pathname.split("/")[2] || null;
-      if (u.pathname.startsWith("/embed/")) return u.pathname.split("/")[2] || null;
+      if (u.pathname.startsWith("/shorts/"))
+        return u.pathname.split("/")[2] || null;
+      if (u.pathname.startsWith("/embed/"))
+        return u.pathname.split("/")[2] || null;
     }
     return null;
   } catch {
@@ -48,72 +57,73 @@ const showVideo = Boolean(latest && youTubeId);
 const embedSrc = youTubeId
   ? `https://www.youtube.com/embed/${youTubeId}?playsinline=1&rel=0&modestbranding=1`
   : null;
-
 ---
 
-<div class="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/10 hover:shadow-xl group overflow-hidden">
-
-  {showVideo ? (
-    /* Video responsive 16:9 */
-    <div class="w-full">
-      <div class="relative w-full" style="padding-top:56.25%">
-        <iframe
-          class="absolute inset-0 w-full h-full"
-          src={embedSrc}
-          title={`YouTube: ${title}`}
-          frameborder="0"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <div class="flex items-center justify-between gap-4 p-3">
-        <div class="flex-1">
-          <h3 class="text-foreground font-medium text-left">{title}</h3>
-          <p class="text-foreground/60 text-sm text-left capitalize">{album}</p>
+<div
+  class="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:bg-white/10 hover:shadow-xl overflow-hidden"
+>
+  {
+    showVideo ? (
+      /* Video responsive 16:9 */
+      <div class="w-full">
+        <div class="relative w-full" style="padding-top:56.25%">
+          <iframe
+            class="absolute inset-0 w-full h-full"
+            src={embedSrc}
+            title={`YouTube: ${title}`}
+            frameborder="0"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          />
         </div>
 
-        {/* Botón por si el embed está restringido en mobile */}
-        {links.youtube && (
-          <a
-            href={links.youtube}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-xs px-2 py-1 rounded bg-muted text-muted-foreground hover:text-foreground"
-          >
-            Abrir en YouTube
-          </a>
-        )}
-      </div>
-    </div>
-  ) : (
-    /* Cover por defecto */
-    <div class="flex items-center justify-between gap-4 p-2">
-      <div class="relative">
-        {cover && (
-          <>
-            <img
-              src={cover}
-              alt={title}
-              class="size-16 rounded-lg object-cover"
-              loading="lazy"
-              decoding="async"
-            />
-            <div class="absolute inset-0 bg-black/30 backdrop-blur-xl rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center">
-              <PlayIcon size={16} class="text-white" />
-            </div>
-          </>
-        )}
-      </div>
-      <div class="flex-1">
-        <h3 class="text-foreground font-medium text-left">{title}</h3>
-        <p class="text-foreground/60 text-sm text-left capitalize">{album}</p>
-      </div>
-    </div>
-  )}
+        <div class="flex items-center justify-between gap-4 p-3">
+          <div class="flex-1">
+            <h3 class="text-foreground font-medium text-left">{title}</h3>
+            <p class="text-foreground/60 text-sm text-left capitalize">
+              {album}
+            </p>
+          </div>
 
-  <div class="flex items-center justify-center bg-white/5 pt-2 px-2">
-    <SocialIcons links={links} size={32} />
-  </div>
+          {/* Botón por si el embed está restringido en mobile */}
+          {links.youtube && (
+            <a
+              href={links.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs px-2 py-1 rounded bg-muted text-muted-foreground hover:text-foreground"
+            >
+              Abrir en YouTube
+            </a>
+          )}
+        </div>
+      </div>
+    ) : (
+      /* Cover por defecto */
+      <div class="flex items-start gap-4 p-4">
+        <div class="relative group">
+          {cover && (
+            <>
+              <img
+                src={cover}
+                alt={title}
+                class="size-16 rounded-xl object-cover shadow-lg"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="absolute inset-0 bg-black/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+            </>
+          )}
+        </div>
+        <div class="flex-1 text-left">
+          <h3 class="text-foreground font-semibold text-lg mb-1">{title}</h3>
+          <p class="text-foreground/70 text-sm mb-3">{album}</p>
+          <div class="flex items-center gap-2">
+            <SocialIcons links={links} size={30} section="release" />
+          </div>
+        </div>
+      </div>
+    )
+  }
 </div>
