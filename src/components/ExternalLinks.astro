@@ -1,0 +1,25 @@
+---
+import Section from "../layouts/Section.astro";
+import LinkCard from "./LinkCard.astro";
+
+interface Links {
+  label: string;
+  description: string;
+  url: string;
+  icon: string;
+  cover?: string;
+}
+const { links = [] as Links[] } = Astro.props;
+---
+
+<Section title="Otros enlaces">
+  {
+    (
+      <div class="space-y-3 text-left">
+        {links.map((l: Links) => (
+          <LinkCard {...l} />
+        ))}
+      </div>
+    )
+  }
+</Section>
