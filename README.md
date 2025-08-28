@@ -1,4 +1,8 @@
 # ArtisTree – Link in Bio Page para Artistas 🎶
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Built with Astro](https://img.shields.io/badge/Astro-FF5D01?logo=astro&logoColor=white)](https://astro.build/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fbf0bf84-90db-47c3-93e2-6bcab8f98617/deploy-status)](https://app.netlify.com/projects/artistree-astro/deploys)
 
 ![Preview](./public/preview.png)
 
