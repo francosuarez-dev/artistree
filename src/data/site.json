@@ -66,5 +66,23 @@
         "youtube": "https://www.youtube.com/watch?v=VxGW_AQwWfo"
       }
     }
+  ],
+  "links": [
+    {
+      "label": "Instagram Persona",
+      "url": "https://open.spotify.com/artist/...",
+      "icon": "globe",
+      "cover": "./img/profile.jpeg"
+    },
+    {
+      "label": "Instagram Productora",
+      "url": "https://music.apple.com/artist/...",
+      "icon": "instagram"
+    },
+    {
+      "label": "YouTube",
+      "url": "https://www.youtube.com/channel/...",
+      "icon": "youtube"
+    }
   ]
 }
