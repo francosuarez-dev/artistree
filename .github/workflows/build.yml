@@ -1,0 +1,32 @@
+name: build
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      # Instala Node.js
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      
+      # 👇 Este paso instala pnpm (necesario!)
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9   # poné la que usás localmente
+      
+      # Cache de pnpm (ahora sí tiene sentido)
+      - uses: actions/cache@v4
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+      
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
