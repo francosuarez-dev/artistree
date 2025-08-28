@@ -8,10 +8,29 @@ import Booking from "../components/Booking.astro";
 import Footer from "../components/Footer.astro";
 import type { Theme, FontPreset } from "../types/theme";
 import { isTheme } from "../types/theme";
+import { isValidShow, isValidRelease, hasBooking } from "../utils/guards";
 
+// theme & font seguros
 const font: FontPreset = (site?.config?.font as FontPreset) ?? "modern";
 const theme: Theme = isTheme(site?.config?.theme) ? site.config.theme : "dark";
-const artist = site.artist;
+const artist = site?.artist ?? {};
+
+// normalizo y filtro datos
+const allShows = Array.isArray(site?.shows)
+  ? site.shows.filter(isValidShow)
+  : [];
+const today = new Date().toISOString().slice(0, 10); // "YYYY-MM-DD"
+const upcomingShows = allShows.filter((s) => s.date >= today);
+
+const releases = Array.isArray(site?.releases)
+  ? site.releases
+      .filter(isValidRelease)
+      .sort((a, b) => b.releaseDate.localeCompare(a.releaseDate))
+  : [];
+
+const showUpcoming = upcomingShows.length > 0;
+const showReleases = releases.length > 0;
+const showBooking = hasBooking(site?.booking);
 ---
 
 <Layout
@@ -21,10 +40,14 @@ const artist = site.artist;
   font={font}
 >
   <div class="relative z-10 max-w-xl mx-auto px-2 py-8 space-y-6">
-    <Header {...artist} links={site.socials} />
-    <UpcomingShows shows={site.shows} />
-    <ReleasesList releases={site.releases} />
-    <Booking {...site.booking} />
-    <Footer copyright={site.config.copyright} />
+    <Header {...artist} links={site?.socials ?? {}} />
+
+    {showUpcoming && <UpcomingShows shows={upcomingShows} />}
+
+    {showReleases && <ReleasesList releases={releases} />}
+
+    {showBooking && <Booking {...site.booking} />}
+
+    <Footer copyright={site?.config?.copyright} />
   </div>
 </Layout>
