@@ -22,6 +22,13 @@ export type Booking = {
   phone?: string;
 };
 
+export type Link = {
+  label: string;
+  url: string;
+  icon: string;
+  cover?: string;
+};
+
 const isISODate = (s?: string) => !!s && /^\d{4}-\d{2}-\d{2}$/.test(s);
 
 export const isValidShow = (s: any): s is Show =>
@@ -35,3 +42,9 @@ export const isValidRelease = (r: any): r is Release =>
   !!r && typeof r.title === "string" && isISODate(r.releaseDate);
 
 export const hasBooking = (b?: Booking) => !!b && (!!b.email || !!b.phone);
+
+export const isValidLink = (l: any): l is Link =>
+  !!l &&
+  typeof l.label === "string" &&
+  typeof l.url === "string" &&
+  typeof l.icon === "string";
