@@ -22,7 +22,7 @@ Está construida con **[Astro](https://astro.build/)** + **TailwindCSS v4**, y p
 1. **Clonar el repositorio**
    ```bash
    git clone https://github.com/francosuarez-dev/artistree.git
-   cd artis-tree
+   cd artistree
    ```
 
 2. **Instalar dependencias**
