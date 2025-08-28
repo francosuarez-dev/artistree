@@ -24,6 +24,7 @@ export type Booking = {
 
 export type Link = {
   label: string;
+  description: string;
   url: string;
   icon: string;
   cover?: string;

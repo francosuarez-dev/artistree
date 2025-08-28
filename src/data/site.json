@@ -70,17 +70,20 @@
   "links": [
     {
       "label": "Instagram Persona",
+      "description": "Perfil personal de Instagram",
       "url": "https://open.spotify.com/artist/...",
-      "icon": "globe",
-      "cover": "./img/profile.jpeg"
+      "icon": "website"
     },
     {
       "label": "Instagram Productora",
+      "description": "Perfil de Instagram de la productora",
       "url": "https://music.apple.com/artist/...",
-      "icon": "instagram"
+      "icon": "instagram",
+      "cover": "./img/profile.jpeg"
     },
     {
       "label": "YouTube",
+      "description": "Canal de YouTube del artista",
       "url": "https://www.youtube.com/channel/...",
       "icon": "youtube"
     }
