@@ -5,7 +5,7 @@
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fbf0bf84-90db-47c3-93e2-6bcab8f98617/deploy-status)](https://app.netlify.com/projects/artistree-astro/deploys)
 
-![Preview](./public/preview.png)
+![Preview](./public/new-preview.png)
 
 ArtisTree es una **landing page personalizable para artistas musicales**.  
 Funciona como un “link-in-bio” moderno para redes sociales: concentra links a tus plataformas (Spotify, Apple Music, YouTube, etc.), próximos shows, lanzamientos y contactos de booking.
