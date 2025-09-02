@@ -1,4 +1,4 @@
-# ArtisTree – Link in Bio Page para Artistas 🎶
+# ArtisTree – Link in Bio Page for Artists 🎶
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Built with Astro](https://img.shields.io/badge/Astro-FF5D01?logo=astro&logoColor=white)](https://astro.build/)
@@ -7,44 +7,43 @@
 
 ![Preview](./public/new-preview.png)
 
-ArtisTree es una **landing page personalizable para artistas musicales**.  
-Funciona como un “link-in-bio” moderno para redes sociales: concentra links a tus plataformas (Spotify, Apple Music, YouTube, etc.), próximos shows, lanzamientos y contactos de booking.
+ArtisTree is a customizable landing page for music artists.
+It works like a modern “link-in-bio” for social networks: centralizing links to your platforms (Spotify, Apple Music, YouTube, etc.), upcoming shows, releases, and booking contacts.
 
-Está construida con **[Astro](https://astro.build/)** + **TailwindCSS v4**, y pensada para ser fácilmente configurable por medio de un solo archivo: `src/data/site.json`.
+Built with [Astro](https://astro.build/) + TailwindCSS v4, and designed to be easily configured via a single file: `src/data/site.json`.
 
 ## 🚀 Demo
 
-👉 [Ver demo](https://artistree-astro.netlify.app/)
+👉 [View demo](https://artistree-astro.netlify.app/)
 
 ---
 
 ## 🚀 Quick Start
 
-`Este proyecto usa pnpm
-, pero podés usar npm sin problemas. El lockfile oficial es pnpm-lock.yaml.`
+This project uses `pnpm`, but you can use `npm` without issues. The official lockfile is `pnpm-lock.yaml`.
 
-1. **Clonar el repositorio**
+1. Clone the repository
 
    ```bash
    git clone https://github.com/francosuarez-dev/artistree.git
    cd artistree
    ```
 
-2. **Instalar dependencias**
+2. Install dependencies
 
    ```bash
    pnpm install
    ```
 
-3. **Levantar el entorno de desarrollo**
+3. Start the development server
 
    ```bash
    pnpm dev
    ```
 
-   El sitio quedará disponible en `http://localhost:4321`
+   The site will be available at `http://localhost:4321`
 
-4. **Build para producción**
+4. Production build
    ```bash
    pnpm build
    pnpm preview
@@ -52,36 +51,36 @@ Está construida con **[Astro](https://astro.build/)** + **TailwindCSS v4**, y p
 
 ---
 
-## 📦 Configuración desde `site.json`
+## 📦 Configuration via `site.json`
 
-Toda la configuración está centralizada en:
+All configuration is centralized in:
 
 ```
 src/
   data/
-    site.json   ← aquí editás todo
+    site.json   ← edit everything here
 ```
 
-> Alternativa avanzada: si querés “imports” de imágenes optimizadas de Astro, podés usar `src/data/site.ts` y exportar un objeto tipado (ver sección **Imágenes**).
+> Advanced alternative: if you want Astro’s optimized image imports, you can use `src/data/site.ts` and export a typed object (see the Images section).
 
 ---
 
-## 🧰 Estructura general
+## 🧰 General Structure
 
 ```jsonc
 {
   "config": {
     "title": "Artistree Landing",
-    "description": "Landing en Astro",
-    "theme": "violet", // uno de: light | dark | violet | blue | green | red | pink | orange
+    "description": "Landing built with Astro",
+    "theme": "violet", // one of: light | dark | violet | blue | green | red | pink | orange
     "copyright": "© 2025 ..."
   },
 
   "artist": {
     "name": "Franco Suárez",
-    "description": "Cantante y compositor...",
-    "bio": "Texto corto...",
-    "picture": "/covers/profile.jpeg" // ver sección Imágenes
+    "description": "Singer and songwriter...",
+    "bio": "Short text...",
+    "picture": "/covers/profile.jpeg" // see Images section
   },
 
   "socials": {
@@ -89,7 +88,7 @@ src/
     "facebook": "https://facebook.com/...",
     "x": "https://x.com/...",
     "youtube": "https://youtube.com/..."
-    // opcionales: spotify, applemusic, tidal, whatsapp, email, website ...
+    // optional: spotify, applemusic, tidal, whatsapp, email, website ...
   },
 
   "booking": {
@@ -99,13 +98,13 @@ src/
 
   "shows": [
     {
-      "title": "Nombre del show",
+      "title": "Show name",
       "date": "2025-09-12", // ISO YYYY-MM-DD
       "city": "Córdoba",
-      "country": "AR", // ISO 3166-1 alpha-2 → renderiza la bandera
+      "country": "AR", // ISO 3166-1 alpha-2 → renders the flag
       "venue": "Club Paraguay",
-      "tickets": "https://mipass...", // opcional
-      "available": true // si false → muestra “Agotado”
+      "tickets": "https://tickets...", // optional
+      "available": true // if false → shows “Sold Out”
     }
   ],
 
@@ -113,7 +112,7 @@ src/
     {
       "title": "Noche Eterna",
       "album": "Noche Eterna Album",
-      "releaseDate": "2025-08-15", // ISO YYYY-MM-DD (ordena por fecha)
+      "releaseDate": "2025-08-15", // ISO YYYY-MM-DD (used for sorting)
       "cover": "/covers/cover1.jpeg",
       "links": {
         "spotify": "https://open.spotify.com/track/...",
@@ -129,55 +128,55 @@ src/
 
 ## 🎨 Theme
 
-- Definido en `config.theme`.
-- Valores válidos: `light | dark | violet | blue | green | red | pink | orange`.
-- El layout aplica `data-theme={config.theme}`, y Tailwind v4 toma colores/gradientes desde `globals.css`.
+- Defined in `config.theme`.
+- Valid values: `light | dark | violet | blue | green | red | pink | orange`.
+- The layout applies `data-theme={config.theme}`, and Tailwind v4 picks colors/gradients from `globals.css`.
 
 ---
 
 ## ✍️ Fonts
 
-- Definido en `config.font`.
-- Valores válidos: `modern | elegant | grotesk`.
-- El layout aplica `data-font={config.font}` en `<html>` y los estilos se toman desde `globals.css`.
-- Cada preset carga automáticamente su tipografía desde Google Fonts:
+- Defined in `config.font`.
+- Valid values: `modern | elegant | grotesk`.
+- The layout applies `data-font={config.font}` on `<html>` and styles are sourced from `globals.css`.
+- Each preset automatically loads its typefaces from Google Fonts:
 
-  - **modern** → Inter (texto y títulos)
-  - **elegant** → Inter (texto) + Playfair Display (títulos)
-  - **grotesk** → Poppins (texto y títulos)
+  - **modern** → Inter (text and headings)
+  - **elegant** → Inter (text) + Playfair Display (headings)
+  - **grotesk** → Poppins (text and headings)
 
-> Podés agregar más presets editando el mapa `FONT_LINKS` en `Layout.astro` y los bloques `:root[data-font="..."]` en `globals.css`.
-
----
-
-## 👤 Artista
-
-- `name`, `description`, `bio` → strings libres.
-- `picture` → ver **Imágenes** más abajo.
+> You can add more presets by editing the `FONT_LINKS` map in `Layout.astro` and the `:root[data-font="..."]` blocks in `globals.css`.
 
 ---
 
-## 🔗 Sociales
+## 👤 Artist
 
-- Claves soportadas (se pueden agregar más):  
+- `name`, `description`, `bio` → free-form strings.
+- `picture` → see **Images** below.
+
+---
+
+## 🔗 Socials
+
+- Supported keys (you can add more):
   `instagram, facebook, x, spotify, applemusic, tidal, youtube, whatsapp, email, website`
-- La UI mapea cada clave a un ícono (tuyos, en `src/icons`).
-- Solo se renderizan los que tengan URL/valor.
+- The UI maps each key to an icon (yours, in `src/icons`).
+- Only entries with a URL/value are rendered.
 
-Ejemplos de valores:
+Examples of values:
 
-- `email`: `"mailto:contacto@..."`
-- `website`: `"https://tusitio.com"`
-- `whatsapp`: `"+5491123456789"` (la UI puede convertir a `https://wa.me/…` si está implementado así)
+- `email`: `"mailto:contact@..."`
+- `website`: `"https://yoursite.com"`
+- `whatsapp`: `"+5491123456789"` (the UI may convert to `https://wa.me/...` if implemented that way)
 
 ---
 
 ## 🎫 Booking
 
-- Sección de contacto para contrataciones.
-- Si hay `email` → botón “Email” (`mailto:`).
-- Si hay `phone` → botón “Teléfono” (`tel:`).
-- Si hay ambos → se muestran los dos.
+- Contact section for bookings.
+- If there is `email` → “Email” button (`mailto:`).
+- If there is `phone` → “Phone” button (`tel:`).
+- If both exist → both are shown.
 
 ```json
 "booking": { "email": "booking@...", "phone": "+54 911 2345 6789" }
@@ -185,94 +184,94 @@ Ejemplos de valores:
 
 ---
 
-## 📅 Shows (con calendario, bandera y tickets)
+## 📅 Shows (calendar, flag, and tickets)
 
-Campos por show:
+Fields per show:
 
-- `title` (opcional, informativo)
-- `date` (**ISO `YYYY-MM-DD`**) → se formatea con locale `es-AR` y se muestra en tarjeta estilo calendario (DOM / 23 / OCT).
-- `city`, `venue` → texto
-- `country` → **código ISO 3166-1 alpha-2** (`AR`, `ES`, `US`…)  
-  Se usa con **flag-icons**: `<span class="fi fi-ar"></span>`.
-- `tickets` (opcional) + `available` (**boolean**):
-  - `tickets` + `available: true` → botón **Entradas**
-  - `tickets` + `available: false` → **Agotado** (sin link)
-  - sin `tickets` → no se muestra acción
+- `title` (optional, informational)
+- `date` (**ISO `YYYY-MM-DD`**) → formatted with locale `es-AR` and displayed in a calendar-style card (day / date / month)
+- `city`, `venue` → text
+- `country` → **ISO 3166-1 alpha-2 code** (`AR`, `ES`, `US`…)
+  Used with **flag-icons:** `<span class="fi fi-ar"></span>`
+- `tickets` (optional) + `available` (**boolean**):
+  - `tickets` + `available: true` → **Tickets** button
+  - `tickets` + `available: false` → **Sold Out** (no link)
+  - without `tickets` → no action is shown
 
-La lista de shows filtra **futuros** y los ordena ascendente por fecha.
+The shows list filters future dates and sorts ascending by date.
 
 ---
 
-## 💿 Releases (con “último lanzamiento” y video YouTube)
+## 💿 Releases (with “latest release” and YouTube video)
 
-Cada release:
+Each release:
 
 - `title` (string)
 - `album` (string)
-- `releaseDate` (**ISO `YYYY-MM-DD`**) → se usa para **ordenar** (desc).
-- `cover` (string) → ruta a imagen.
-- `links` (objeto):
-  - claves típicas: `spotify`, `applemusic`, `deezer`, `tidal`, `youtube`, etc.
-  - **Comportamiento “destacado”**: el **más reciente** (según `releaseDate`) se muestra primero;  
-    si además tiene `links.youtube`, se **incrusta el video** en lugar del cover (con fallback “Abrir en YouTube” si el embed no está disponible en móvil).
-  - El resto de lanzamientos se muestran como tarjetas normales con cover + íconos de plataformas.
+- `releaseDate` (**ISO `YYYY-MM-DD`**) → used for **sorting** (desc)
+- `cover` (string) → image path
+- `links` (object):
+  - typical keys: `spotify`, `applemusic`, `deezer`, `tidal`, `youtube`, etc.
+  - **"Featured" behavior**: the most recent (by `releaseDate`) is shown first;
+    if it also has `links.youtube`, the **video is embedded** instead of the cover (with a fallback “Open on YouTube” if embedding isn’t available on mobile)
+  - The rest of the releases are shown as regular cards with cover + platform icons
 
 ---
 
-## 🔗 Links personalizados
+## 🔗 Custom Links
 
-Además de las redes sociales básicas (`socials`), podés definir una lista de **links personalizados** en `site.json`:
+In addition to basic social networks (`socials`), you can define a list of custom links in `site.json`:
 
 ````json
 "links": [
   {
-    "label": "Instagram Persona",
-    "description": "Perfil personal de Instagram",
-    "url": "https://instagram.com/usuario",
+    "label": "Personal Instagram",
+    "description": "Personal Instagram profile",
+    "url": "https://instagram.com/user",
     "icon": "website"
   },
   {
-    "label": "Instagram Productora",
-    "description": "Perfil de Instagram de la productora",
-    "url": "https://instagram.com/productora",
+    "label": "Label Instagram",
+    "description": "Record label Instagram profile",
+    "url": "https://instagram.com/label",
     "icon": "instagram",
     "cover": "./img/profile.jpeg"
   },
   {
     "label": "YouTube",
-    "description": "Canal de YouTube del artista",
+    "description": "Artist YouTube channel",
     "url": "https://www.youtube.com/channel/...",
     "icon": "youtube"
   }
 ]
 
 ````
-### Campos disponibles:
 
-- label: Nombre del link que se mostrará.
-- description: Texto corto descriptivo.
-- url: Dirección completa del enlace.
-- icon: Nombre del ícono (ej: instagram, youtube, website, tiktok, etc.).
-- cover (opcional): Imagen personalizada.
-- 👉 Si cover está presente, reemplaza el ícono.
+### Available fields
 
+- label: Name of the link to display
+- description: Short descriptive text
+- url: Full URL of the link
+- icon: Icon name (e.g., instagram, youtube, website, tiktok, etc.)
+- cover (optional): Custom image
+- If `cover` is present, it replaces the icon
 
 ---
 
-## 🖼️ Imágenes (covers / profile)
+## 🖼️ Images (covers / profile)
 
-Tenés dos caminos:
+You have two options:
 
-### Opción A – JSON + `public/` (simple)
+### Option A – JSON + `public/` (simple)
 
-- Colocá las imágenes en `public/covers/...`
-- En el JSON usá rutas absolutas:
+- Place images in `public/covers/...`
+- Use absolute paths in JSON:
   `"cover": "/covers/noche-eterna.jpg"`, `"picture": "/covers/profile.jpeg"`
 
-### Opción B – Imports optimizados (avanzado)
+### Option B – Optimized imports (advanced)
 
-- Cambiá `src/data/site.json` por `src/data/site.ts`
-- Importá covers para que Astro genere URLs optimizadas:
+- Replace `src/data/site.json` with `src/data/site.ts`
+- Import covers so Astro generates optimized URLs:
 
 ```ts
 // src/data/site.ts
@@ -287,41 +286,42 @@ export default {
 
 ---
 
-## ✅ Reglas y validaciones recomendadas
+## ✅ Recommended rules and validations
 
-- **Fechas** (`date`, `releaseDate`): usar ISO `YYYY-MM-DD`.
-- **País** (`country` en shows): usar **ISO alpha-2** (ej: `AR`, `ES`, `US`).
+- **Dates** (`date`, `releaseDate`): use ISO `YYYY-MM-DD`
+- **Country** (`country` in shows): use ISO alpha-2 (e.g., `AR`, `ES`, `US`)
 - **Links**:
-  - `email` como `mailto:...`
-  - `phone` como número legible; la UI limpia espacios para `tel:`
-  - `youtube` puede ser `watch?v=…`, `youtu.be/…` o `shorts/…` (el parser extrae el ID).
-- **Theme** (`config.theme`): usar uno de los definidos en `globals.css`.
+  - `email` as `mailto:...`
+  - `phone` as a readable number; the UI trims spaces for `tel:`
+  - `youtube` can be `watch?v=…`, `youtu.be/…` or `shorts/…` (the parser extracts the ID)
+- **Theme** (`config.theme`): use one of those defined in `globals.css`
 
 ---
 
-## 🛠️ Cómo se vuelca en la UI (resumen)
+## 🛠️ How it maps to the UI (summary)
 
-- `config.theme` → `<html data-theme="...">` (aplica colores/gradientes del theme).
-- `artist.*` → header/perfil.
-- `socials` → `SocialIcons` mapea **clave → icono** y renderiza solo los presentes.
-- `booking` → muestra botones Email / Teléfono según existan.
-- `shows` → tarjeta calendario + bandera (flag-icons) + acción Entradas/Agotado.
-- `releases` → ordenados DESC por `releaseDate`; el primero se **destaca** y, si hay `links.youtube`, se **incrusta** el video; el resto en grilla.
-
----
-
-## 🧪 Checklist rápido
-
-- [ ] ¿`config.theme` es uno válido?
-- [ ] ¿Imágenes apuntan a `/covers/...` en `public/` **o** usás `site.ts` con imports?
-- [ ] ¿`country` de cada show es un código ISO de 2 letras?
-- [ ] ¿Fechas con formato `YYYY-MM-DD`?
-- [ ] ¿`releases[0]` (el más nuevo) tiene `links.youtube` si querés el video incrustado?
+- `config.theme` → `<html data-theme="...">` (applies theme colors/gradients)
+- `artist.*` → header/profile
+- `socials` → `SocialIcons` maps key → icon and renders only those present
+- `booking` → shows Email / Phone buttons as available
+- `shows` → calendar card + flag (flag-icons) + Tickets/Sold Out action
+- `releases` → sorted DESC by `releaseDate`; the first is featured and, if `links.youtube` exists, the video is embedded; the rest in a grid
 
 ---
 
-## ❓Preguntas frecuentes
+## 🧪 Quick checklist
 
-- **No aparece la bandera:** revisá que `country` sea ISO alpha-2 (ej: `BR`, no `BRA`).
-- **El embed de YouTube dice “no disponible” en móvil:** algunos videos musicales bloquean el embed. La UI muestra un botón **“Abrir en YouTube”** como fallback.
-- **Quiero agregar otra plataforma social:** creá el icono `.astro`, añadilo al **mapa de `SocialIcons`** y agregá la clave en `socials` del JSON.
+- [ ] Is `config.theme` a valid one?
+- [ ] Do images point to `/covers/...` in `public/` or are you using `site.ts` with imports?
+- [ ] Is each show’s `country` a 2-letter ISO code?
+- [ ] Dates in `YYYY-MM-DD` format?
+- [ ] Does `releases[0]` (the newest) have `links.youtube` if you want the embedded video?
+
+---
+
+## ❓ FAQ
+
+- The flag doesn’t appear: ensure `country` is ISO alpha-2 (e.g., `BR`, not `BRA`).
+- YouTube embed says “not available” on mobile: some music videos block embedding. The UI shows an “Open on YouTube” button as a fallback.
+- I want to add another social platform: create the `.astro` icon, add it to the `SocialIcons` map, and add the key under `socials` in the JSON.
+
