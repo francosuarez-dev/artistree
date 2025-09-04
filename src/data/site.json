@@ -10,7 +10,7 @@
     "name": "Singer Artist",
     "description": "Cantante y compositor de música indie.",
     "bio": "Creando musica desde siempre",
-    "picture": "./img/profile.jpeg"
+    "picture": "/img/profile.webp"
   },
   "socials": {
     "instagram": "https://instagram.com/franco",
@@ -48,7 +48,7 @@
       "title": "Noche Eterna",
       "album": "Noche Eterna Album",
       "releaseDate": "2025-08-15",
-      "cover": "./img/covers/cover1.jpeg",
+      "cover": "/img/covers/cover1.webp",
       "links": {
         "spotify": "https://open.spotify.com/track/...",
         "applemusic": "https://music.apple.com/...",
@@ -59,7 +59,7 @@
       "title": "Amanecer",
       "album": "Noche Eterna Album",
       "releaseDate": "2025-05-02",
-      "cover": "./img/covers/cover1.jpeg",
+      "cover": "/img/covers/cover1.webp",
       "links": {
         "spotify": "https://open.spotify.com/track/...",
         "applemusic": "https://music.apple.com/...",
@@ -79,7 +79,7 @@
       "description": "Perfil de Instagram de la productora",
       "url": "https://music.apple.com/artist/...",
       "icon": "instagram",
-      "cover": "./img/profile.jpeg"
+      "cover": "/img/profile.webp"
     },
     {
       "label": "YouTube",

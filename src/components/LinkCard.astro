@@ -2,6 +2,7 @@
 import { ExternalLinkIcon } from "../icons";
 import Rendericon from "./Rendericon.astro";
 import { cn } from "../utils/classNames";
+import { Image } from "astro:assets";
 
 interface Props {
   label: string;
@@ -45,10 +46,14 @@ const colorsMap: Record<string, string> = {
       >
         {
           cover ? (
-            <img
+            <Image
               src={cover}
               alt={label}
               class="w-full h-full object-cover rounded-xl"
+              loading="lazy"
+              decoding="async"
+              width={64}
+              height={64}
             />
           ) : (
             <Rendericon name={icon} size={30} class="text-white" />
