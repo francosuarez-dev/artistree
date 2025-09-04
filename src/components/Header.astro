@@ -1,6 +1,6 @@
 ---
 import Section from "../layouts/Section.astro";
-import { MusicIcon } from "../icons";
+import { MusicIcon, ShareIcon } from "../icons";
 import SocialIcons from "./SocialIcons.astro";
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
   description: string;
   bio: string;
   links?: Record<string, string>;
-  picture: string
+  picture: string;
 }
 
 const { name, bio, description, links = {}, picture }: Props = Astro.props;
@@ -27,6 +27,9 @@ const { name, bio, description, links = {}, picture }: Props = Astro.props;
       >
         <MusicIcon class="text-white size-5" />
       </div>
+      <div class="absolute top-0 right-0 flex items-center justify-center bg-white/10 backdrop-blur-xl rounded-full p-2 border border-white/20 cursor-pointer hover:bg-white/20 transition-colors" id="share-button">
+        <ShareIcon class="text-foreground" />
+      </div>
     </div>
     <h1 class="text-3xl font-bold text-foreground mb-2">{name}</h1>
     <p class="text-foreground/80 text-lg">{description}</p>
@@ -38,3 +41,61 @@ const { name, bio, description, links = {}, picture }: Props = Astro.props;
     </div>
   </header>
 </Section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const shareButton = document.getElementById('share-button');
+    
+    if (shareButton) {
+      shareButton.addEventListener('click', async () => {
+        try {
+          // Verificar si el navegador soporta Web Share API
+          if (navigator.share && navigator.canShare) {
+            const shareData = {
+              title: document.title,
+              text: 'Echa un vistazo a este perfil de artista',
+              url: window.location.href
+            };
+            
+            // Verificar si los datos son válidos para compartir
+            if (navigator.canShare(shareData)) {
+              await navigator.share(shareData);
+              return;
+            }
+          }
+          
+          // Fallback: copiar al portapapeles
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(window.location.href);
+          } else {
+            // Fallback para contextos no seguros
+            const textArea = document.createElement('textarea');
+            textArea.value = window.location.href;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+          }
+          
+          // Mostrar feedback visual temporal
+          const originalContent = shareButton.innerHTML;
+          shareButton.innerHTML = '<span class="text-green-400 text-sm">¡Copiado!</span>';
+          setTimeout(() => {
+            shareButton.innerHTML = originalContent;
+          }, 2000);
+          
+        } catch (error) {
+          if (typeof error === 'object' && error !== null && 'name' in error && (error as { name?: string }).name !== 'AbortError') {
+            console.error('Error al compartir:', error);
+            // Mostrar feedback de error
+            const originalContent = shareButton.innerHTML;
+            shareButton.innerHTML = '<span class="text-red-400 text-sm">Error</span>';
+            setTimeout(() => {
+              shareButton.innerHTML = originalContent;
+            }, 2000);
+          }
+        }
+      });
+    }
+  });
+</script>
