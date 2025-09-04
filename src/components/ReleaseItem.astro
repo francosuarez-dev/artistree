@@ -13,14 +13,11 @@ interface Props {
 }
 const {
   title,
-  releaseDate,
   cover,
   links = {},
   album,
   latest,
 }: Props = Astro.props;
-
-const d = releaseDate ? new Date(releaseDate) : null;
 
 /** Extrae un ID válido de YouTube (watch, youtu.be, shorts, embed, music) y limpia params extra */
 function getYouTubeId(url?: string | null): string | null {
