@@ -1,90 +1,88 @@
 {
   "config": {
-    "title": "Artistree Landing",
-    "description": "Landind en Astro",
+    "title": "La Gambeta",
+    "description": "El Show que revoluciona el país.",
     "theme": "violet",
     "font": "modern",
-    "copyright": "© 2025 Franco Suárez"
+    "copyright": "© 2025 Takawishi"
   },
   "artist": {
-    "name": "Singer Artist",
-    "description": "Cantante y compositor de música indie.",
-    "bio": "Creando musica desde siempre",
+    "name": "La Gambeta",
+
     "picture": "/img/profile.webp"
   },
   "socials": {
-    "instagram": "https://instagram.com/franco",
-    "facebook": "https://facebook.com/franco",
-    "x": "https://x.com/franco",
-    "youtube": "https://youtube.com/franco",
-    "tiktok": "https://www.tiktok.com/@tuusuario"
+    "instagram": "https://www.instagram.com/eligdelagambeta",
+    "tiktok": "https://tiktok.com/@eltiktokdelagambeta",
+    "youtube": "https://www.youtube.com/@takawishi",
+    "x": "https://twitter.com/eltwdelagambeta"
   },
   "booking": {
-    "email": "booking@artistree.link",
-    "phone": "+54 911 2345 6789"
+    "email": "info@takawishi.com"
   },
   "shows": [
     {
-      "title": "Bailaso",
+      "title": "Neuquén",
       "date": "2025-09-12",
-      "city": "Córdoba",
+      "city": "Neuquén",
       "country": "AR",
-      "venue": "Club Paraguay",
-      "tickets": "https://mipass.com/entradas/xyz",
+      "venue": "Espacio Duam - 21:00hs",
+      "tickets": "https://www.protickets.com.ar/event/la-gambeta",
       "available": true
     },
     {
-      "title": "Bailaso",
-      "date": "2025-10-05",
-      "city": "Madrid",
-      "country": "ES",
-      "venue": "Sala Caracol",
-      "tickets": "https://mipass.com/entradas/xyz",
-      "available": false
+      "title": "San Isidro",
+      "date": "2025-09-19",
+      "city": "San Isidro",
+      "country": "AR",
+      "venue": "Teatro Don Bosco - 21:00hs",
+      "tickets": "https://www.tuentrada.com/eventos/detalle/LA-GAMBETA/135336641394",
+      "available": true
+    },
+    {
+      "title": "Mar del Plata",
+      "date": "2025-10-18",
+      "city": "Mar del Plata",
+      "country": "AR",
+      "venue": "Teatro Roxy-Radio City - 21:00hs",
+      "tickets": "https://www.plateanet.com/obra/32681?obra=LA-GAMBETA-_&paso=inicio",
+      "available": true
     }
   ],
   "releases": [
     {
-      "title": "Noche Eterna",
-      "album": "Noche Eterna Album",
-      "releaseDate": "2025-08-15",
-      "cover": "/img/covers/cover1.webp",
+      "title": "A los versos con Lucila Mollesi",
+      "album": "#lagambeta",
+      "releaseDate": "2025-09-02",
+      "cover": "https://i.ytimg.com/vi/l8OAT8OLFR8/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDUAL9IwduDO5ymZa-UJRtpjFpYaA",
       "links": {
-        "spotify": "https://open.spotify.com/track/...",
-        "applemusic": "https://music.apple.com/...",
-        "youtube": "https://www.youtube.com/watch?v=VxGW_AQwWfo"
+        "youtube": "https://www.youtube.com/watch?v=l8OAT8OLFR8"
       }
     },
     {
-      "title": "Amanecer",
-      "album": "Noche Eterna Album",
-      "releaseDate": "2025-05-02",
-      "cover": "/img/covers/cover1.webp",
+      "title": "Un capítulo polideportivo con Lalo Mir, Maico Casella, Homero y Felipe",
+      "album": "#lagambeta",
+      "releaseDate": "2025-07-15",
+      "cover": "https://i.ytimg.com/vi/XT9Od9_K59M/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLAVfvrHyv1-kgXf7EYDdvd3Homf-Q",
       "links": {
-        "spotify": "https://open.spotify.com/track/...",
-        "applemusic": "https://music.apple.com/...",
-        "youtube": "https://www.youtube.com/watch?v=VxGW_AQwWfo"
+        "youtube": "https://www.youtube.com/watch?v=XT9Od9_K59M&t=4137s"
+      }
+    },
+    {
+      "title": "Fran Gómez hasta las manos",
+      "album": "#lagambeta",
+      "releaseDate": "2025-07-10",
+      "cover": "https://i.ytimg.com/vi/ZPZqbFUIQnA/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLD9Ul31E5jzgEGPYFUTSUHJOxTHXg",
+      "links": {
+        "youtube": "https://www.youtube.com/watch?v=ZPZqbFUIQnA"
       }
     }
   ],
   "links": [
     {
-      "label": "Instagram Persona",
-      "description": "Perfil personal de Instagram",
-      "url": "https://open.spotify.com/artist/...",
-      "icon": "website"
-    },
-    {
-      "label": "Instagram Productora",
-      "description": "Perfil de Instagram de la productora",
-      "url": "https://music.apple.com/artist/...",
-      "icon": "instagram",
-      "cover": "/img/profile.webp"
-    },
-    {
-      "label": "YouTube",
-      "description": "Canal de YouTube del artista",
-      "url": "https://www.youtube.com/channel/...",
+      "label": "Takawishi",
+      "description": "Creadores de Contenidos, o algo así.",
+      "url": "https://www.youtube.com/@Takawishi",
       "icon": "youtube"
     }
   ]

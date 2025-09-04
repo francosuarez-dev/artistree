@@ -1,20 +1,30 @@
 ---
 interface Props {
   title?: string;
+  subtitle?: string;
 }
 
-const { title }: Props = Astro.props;
+const { title, subtitle }: Props = Astro.props;
 ---
 
 <div
   class="text-center relative bg-white/5 backdrop-blur-xl rounded-3xl p-4 border border-white/10 shadow-2xl"
 >
-  {
-    title && (
-      <h2 class="text-xl text-center font-bold text-foreground mb-4 capitalize">
-        {title}
-      </h2>
-    )
-  }
+  <div class="space-y-0 mb-4">
+    {
+      title && (
+        <h2 class="text-xl text-center font-bold text-foreground capitalize">
+          {title}
+        </h2>
+      )
+    }
+    {
+      subtitle && (
+        <h3 class="text-lg text-center font-semibold text-foreground capitalize">
+          {subtitle}
+        </h3>
+      )
+    }
+  </div>
   <slot />
 </div>
