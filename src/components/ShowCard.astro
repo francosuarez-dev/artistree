@@ -11,7 +11,8 @@ interface Props {
   available: boolean;
 }
 
-const { date, city, country, venue, tickets, available }: Props = Astro.props;
+const { date, city, country, venue, tickets, available, title }: Props =
+  Astro.props;
 
 const d = new Date(date);
 
@@ -42,19 +43,20 @@ const flagClass = cc ? `fi fi-${cc}` : null;
     </div>
 
     <div class="flex-1">
-      <div class="flex items-center gap-2 mb-2">
-        <div>
-          <h3 class="text-foreground font-semibold">{venue}</h3>
-          <p class="text-foreground/70 flex items-center gap-1">
-            {
-              flagClass ? (
-                <span class={`${flagClass} rounded shrink-0`} title={country} />
-              ) : (
-                <GlobeIcon size={18} class="text-muted-foreground shrink-0" />
-              )
-            }
-            {city}
-          </p>
+      <div class="flex flex-col items-start justify-center mb-2 text-left">
+        <div class="flex flex-col">
+          <h3 class="text-foreground font-semibold leading-5">{title}</h3>
+          <span class="text-foreground/70 text-sm">{venue}</span>
+        </div>
+        <div class="flex items-center gap-1 text-sm font-semibold">
+          {
+            flagClass ? (
+              <span class={`${flagClass} rounded shrink-0`} title={country} />
+            ) : (
+              <GlobeIcon size={18} class="text-muted-foreground shrink-0" />
+            )
+          }
+          {city}
         </div>
       </div>
     </div>
@@ -74,9 +76,12 @@ const flagClass = cc ? `fi fi-${cc}` : null;
 
       {
         tickets && !available && (
-          <span class="inline-flex text-sm items-center gap-2 px-3 py-2 rounded-xl bg-muted text-muted-foreground shrink-0">
-            <span>Agotado</span>
-          </span>
+          <div class="flex flex-col items-center gap-1">
+            <div class="inline-flex items-center justify-center w-10 h-10 bg-foreground/10 hover:bg-foreground/20 backdrop-blur-xl text-red-400 rounded-full transition-all duration-200 hover:scale-110 border border-white/20">
+              <TicketsIcon size={18} />
+            </div>
+            <span class="text-xs text-muted-foreground">Agotado</span>
+          </div>
         )
       }
     </div>

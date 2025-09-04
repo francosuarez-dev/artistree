@@ -20,7 +20,7 @@ const sorted = [...releases].sort((a, b) => {
 const [latest, ...rest] = sorted;
 ---
 
-<Section title="Ultimos lanzamientos">
+<Section title="Últimos programas">
   <div class="space-y-3">
     {latest && <ReleaseItem {...latest} latest />}
     {rest.length > 0 && rest.map((r) => <ReleaseItem {...r} />)}

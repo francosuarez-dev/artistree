@@ -98,8 +98,8 @@ const showVideo = Boolean(latest && youTubeId);
             </>
           )}
         </div>
-        <div class="flex-1 text-left">
-          <h3 class="text-foreground font-semibold text-lg mb-1">{title}</h3>
+        <div class="flex-1 text-left truncate">
+          <h3 class="text-foreground font-semibold text-lg mb-1 truncate">{title}</h3>
           <p class="text-foreground/70 text-sm mb-3">{album}</p>
           <div class="flex items-center gap-2">
             <SocialIcons links={links} size={30} section="release" />
